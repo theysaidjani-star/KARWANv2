@@ -1,0 +1,1525 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Promo - Karwan Properties - Serenz by Danube</title>
+    <link rel="icon" href="../../Assets/Logo/fav-black.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.0/css/flag-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.min.css"
+    />
+
+        <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1747598173040963');
+fbq('track', 'PageView');
+</script>
+
+    
+
+    <style>
+      :root {
+        --bg: #1f1f1f;
+        --text: #e9e5dd;
+        --muted: #cfcabf;
+        --line: #3b3b3b;
+        --cream: #efe6d8;
+        --ink: #6e5a3b;
+        --error: #ff6b6b;
+        --ease: cubic-bezier(0.22, 0.9, 0.27, 1);
+        --speed: 420ms;
+
+        --left-gutter: clamp(64px, 12vw, 260px);
+        --heading-w: 760px;
+        --content-w: 560px;
+        --col-pad: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          "Poppins",
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .app {
+        width: 100%;
+        height: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+      }
+
+      /* Progress */
+      .progress-wrap {
+        height: 18px;
+        padding: 6px 10px 5px;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        background: var(--bg);
+      }
+      .progress-done,
+      .progress-left {
+        height: 4px;
+        border-radius: 999px;
+        transition:
+          width 0.38s var(--ease),
+          flex-basis 0.38s var(--ease),
+          opacity 0.25s ease;
+      }
+      .progress-done {
+        width: 0%;
+        background: #eee9df;
+      }
+      .progress-left {
+        flex: 1;
+        background: #6b6b6b;
+      }
+
+      /* Steps + animations */
+      .viewport {
+        position: relative;
+        overflow: hidden;
+      }
+      .step {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(55px);
+        will-change: transform, opacity, filter;
+        filter: blur(0);
+        z-index: 1;
+      }
+      .step.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .enter-forward {
+        animation: enterFromBottom var(--speed) var(--ease) both;
+      }
+      .enter-back {
+        animation: enterFromTop var(--speed) var(--ease) both;
+      }
+      .leave-forward {
+        animation: leaveToTop calc(var(--speed) - 60ms) var(--ease) both;
+      }
+      .leave-back {
+        animation: leaveToBottom calc(var(--speed) - 60ms) var(--ease) both;
+      }
+
+      @keyframes enterFromBottom {
+        from {
+          opacity: 0;
+          transform: translateY(65px) scale(0.985);
+          filter: blur(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+      }
+      @keyframes enterFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(-65px) scale(0.985);
+          filter: blur(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+      }
+      @keyframes leaveToTop {
+        from {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-65px) scale(0.985);
+          filter: blur(10px);
+        }
+      }
+      @keyframes leaveToBottom {
+        from {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(65px) scale(0.985);
+          filter: blur(10px);
+        }
+      }
+
+      /* Container */
+      .container {
+        margin-left: var(--left-gutter);
+        margin-right: 24px;
+        width: calc(100% - var(--left-gutter) - 24px);
+        padding: 0 var(--col-pad) 32px;
+      }
+
+      .q-badge {
+        width: 24px;
+        height: 26px;
+        border-radius: 7px;
+        background: var(--cream);
+        color: #1d1b17;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        font-size: 13px;
+        margin-bottom: 14px;
+      }
+      .question {
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        font-size: 32px;
+        line-height: 1.28;
+      }
+
+      .choices {
+        margin-top: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: var(--content-w);
+      }
+      .choice {
+        min-height: 56px;
+        padding: 12px 14px;
+        background: #2a2a2a;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 18.5px;
+        font-weight: 600;
+        color: #ece8e0;
+        transition:
+          border-color 0.18s ease,
+          background 0.18s ease,
+          transform 0.12s ease;
+      }
+      .choice:hover {
+        background: #2f2f2f;
+      }
+      .choice.selected {
+        border: 2px solid var(--cream);
+        background: #242321;
+        padding: 11px 13px;
+      }
+      .choice input {
+        display: none;
+      }
+      .key {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        border: 1px solid #5b5b5b;
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+        font-weight: 800;
+        color: #e7e3db;
+        flex-shrink: 0;
+      }
+      .choice.selected .key {
+        background: var(--cream);
+        color: #222;
+        border-color: var(--cream);
+      }
+
+      .field-area {
+        margin-top: 26px;
+        max-width: var(--content-w);
+      }
+      .custom-time-row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 8px;
+      }
+      .custom-time-row .input {
+        flex: 1;
+        min-width: 0;
+      }
+      .custom-time-row select.input {
+        appearance: auto;
+        border: 1px solid #454545;
+        border-radius: 10px;
+        padding: 10px 12px;
+        background: #242424;
+        font-size: 18px;
+      }
+      .input {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #454545;
+        background: transparent;
+        color: var(--text);
+        font-size: 20px;
+        padding: 10px 0 13px;
+        outline: 0;
+        font-weight: 500;
+      }
+      .input::placeholder {
+        color: #7b7b7b;
+      }
+      .input:focus {
+        border-bottom-color: #8a8a8a;
+      }
+
+      .contact-title {
+        max-width: var(--heading-w);
+        font-size: 38px;
+        font-weight: 700;
+        margin: 0 0 16px;
+        line-height: 1.2;
+      }
+      .contact-grid {
+        display: grid;
+        gap: 18px;
+        max-width: var(--content-w);
+      }
+      .contact-field label {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .contact-field .input {
+        font-size: 19px;
+      }
+
+      /* Phone row */
+      .phone-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: end;
+      }
+      @media (max-width: 959.98px) {
+        .phone-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .helper {
+        margin-top: 10px;
+        color: #bdb8b1;
+        font-size: 12.5px;
+        font-weight: 600;
+      }
+      .helper a {
+        color: #cfc6b4;
+        text-decoration: none;
+      }
+      .error {
+        display: none;
+        color: var(--error);
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .step.show-error .error {
+        display: block;
+      }
+
+      /* Footer */
+      .nav {
+        position: sticky;
+        bottom: 0;
+        z-index: 200;
+        pointer-events: auto;
+        padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background: linear-gradient(
+          to top,
+          rgba(32, 32, 32, 0.98),
+          rgba(32, 32, 32, 0.85),
+          rgba(32, 32, 32, 0)
+        );
+      }
+      .nav.no-back .back-btn {
+        display: none;
+      }
+      .back-btn,
+      .ok-btn {
+        border: 0;
+        height: 60px;
+        border-radius: 14px;
+        background: var(--cream);
+        color: var(--ink);
+        font-weight: 800;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+      }
+      .back-btn {
+        width: 58px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+      .back-btn svg {
+        width: 26px;
+        height: 26px;
+      }
+      .ok-btn {
+        flex: 1 1 auto;
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: 0.3px;
+      }
+      .back-btn:disabled,
+      .ok-btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      @media (min-width: 960px) {
+        .container {
+          margin-left: var(--left-gutter);
+          margin-right: 24px;
+          width: calc(100% - var(--left-gutter) - 24px);
+        }
+        .question {
+          font-size: 32px;
+        }
+        .nav {
+          position: fixed;
+          left: calc(var(--left-gutter) + var(--col-pad));
+          bottom: calc(22px + env(safe-area-inset-bottom));
+          background: transparent;
+          padding: 0;
+          z-index: 999;
+          pointer-events: auto;
+        }
+        .ok-btn {
+          flex: 0 0 auto;
+          height: 44px;
+          padding: 0 16px;
+          font-size: 16px;
+          border-radius: 10px;
+          width: 10rem;
+          font-weight: 500;
+        }
+        .back-btn {
+          display: none;
+        }
+      }
+
+      /* Desktop pager */
+      .pager {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        display: none;
+        gap: 10px;
+        z-index: 1000;
+      }
+      .pbtn {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 0;
+        background: var(--cream);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      }
+      .pbtn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      @media (min-width: 960px) {
+        .pager {
+          display: flex;
+        }
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .nav .ok-btn,
+        .nav .back-btn,
+        .pager .pbtn {
+          transition:
+            transform 140ms ease,
+            box-shadow 200ms ease,
+            filter 180ms ease,
+            background-color 180ms ease;
+          will-change: transform, box-shadow;
+        }
+        .nav .ok-btn:hover:not(.is-pressing),
+        .nav .back-btn:hover:not(.is-pressing),
+        .pager .pbtn:hover:not(.is-pressing) {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+          filter: saturate(1.05);
+        }
+      }
+      .nav .ok-btn.is-pressing,
+      .nav .back-btn.is-pressing,
+      .pager .pbtn.is-pressing {
+        transform: translateY(2px) scale(0.98);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+        filter: saturate(0.98) brightness(0.98);
+      }
+      @keyframes keyPop {
+        0% {
+          transform: translateY(2px) scale(0.985);
+        }
+        60% {
+          transform: translateY(-1px) scale(1.01);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
+      .nav .ok-btn.did-press,
+      .nav .back-btn.did-press,
+      .pager .pbtn.did-press {
+        animation: keyPop 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      /* Mobile spacing */
+      @media (max-width: 959.98px) {
+        .step {
+          align-items: flex-start;
+          padding-top: 5vh;
+          overflow-y: auto;
+        }
+        .container {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          padding: 0 var(--col-pad) 32px;
+        }
+        .question {
+          font-size: 26px;
+          line-height: 1.3;
+        }
+        .choices {
+          gap: 12px;
+        }
+        .choice {
+          min-height: 60px;
+          border-radius: 14px;
+          font-size: 18px;
+        }
+        .choice.selected {
+          border-width: 2px;
+          border-radius: 14px;
+          padding: 10px 13px;
+        }
+        .key {
+          width: 30px;
+          height: 30px;
+          border-radius: 8px;
+        }
+      }
+
+      /* ===== Thank You Section — Simple & Clean ===== */
+      .step.done {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow-y: auto;
+        flex-direction: column;
+        gap: 0;
+        padding: 24px 20px !important;
+      }
+
+      .thankyou-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--cream);
+        margin-bottom: 24px;
+      }
+      .thankyou-icon svg {
+        width: 40px;
+        height: 40px;
+        color: #2a241b;
+      }
+
+      .thankyou-heading {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--text);
+        margin: 0 0 12px;
+      }
+
+      .thankyou-message {
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--muted);
+        margin: 0 0 36px;
+        max-width: 420px;
+        line-height: 1.6;
+      }
+
+      .thankyou-links {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .thankyou-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+        cursor: pointer;
+      }
+      .thankyou-link svg {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+      }
+
+      .thankyou-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      .thankyou-link:active {
+        transform: translateY(1px) scale(0.98);
+      }
+
+      /* Facebook */
+      .thankyou-link.fb {
+        background: #1877f2;
+        color: #fff;
+      }
+      .thankyou-link.fb:hover {
+        background: #1565d8;
+      }
+
+      /* Instagram */
+      .thankyou-link.ig {
+        background: linear-gradient(
+          135deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+        color: #fff;
+      }
+      .thankyou-link.ig:hover {
+        background: linear-gradient(
+          135deg,
+          #e08428,
+          #d55d35,
+          #c9223c,
+          #b81f5c,
+          #a8157a
+        );
+      }
+
+      /* Website */
+      .thankyou-link.web {
+        background: var(--cream);
+        color: var(--ink);
+      }
+      .thankyou-link.web:hover {
+        background: #e5dccf;
+      }
+
+      #confetti {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: 959.98px) {
+        .thankyou-heading {
+          font-size: 26px;
+        }
+        .thankyou-message {
+          font-size: 15px;
+          margin-bottom: 28px;
+        }
+        .thankyou-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+          max-width: 300px;
+        }
+        .thankyou-link {
+          width: 100%;
+          justify-content: center;
+          padding: 16px 20px;
+          border-radius: 14px;
+          font-size: 16px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .step,
+        .enter-forward,
+        .enter-back,
+        .leave-forward,
+        .leave-back {
+          animation: none !important;
+          transition: none !important;
+          filter: none !important;
+        }
+      }
+
+      .iti__country-list {
+        background-color: #1f1f1f;
+        border-color: #3b3b3b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Progress -->
+      <div class="progress-wrap">
+        <div class="progress-done" id="progressDone"></div>
+        <div class="progress-left" id="progressLeft"></div>
+      </div>
+
+      <main class="viewport">
+        <div id="questionSteps"></div>
+
+        <!-- 7 Contact -->
+        <section
+          class="step"
+          data-type="contact"
+          data-name="contact"
+          data-required="true"
+        >
+          <div class="container">
+            <h2 class="contact-title">
+              Almost done — please share your details
+            </h2>
+            <div class="contact-grid">
+              <div class="contact-field">
+                <label>First name*</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="firstName"
+                  placeholder="Jane"
+                  autocomplete="given-name"
+                />
+              </div>
+              <div class="contact-field">
+                <label>Last name*</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="lastName"
+                  placeholder="Smith"
+                  autocomplete="family-name"
+                />
+              </div>
+              <div class="contact-field">
+                <label>Phone number*</label>
+                <div class="phone-row">
+                  <input
+                    class="input"
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone number"
+                    autocomplete="tel"
+                    inputmode="tel"
+                  />
+                </div>
+                <div class="error phone-error">
+                  Please enter a valid phone number in the correct format.
+                </div>
+              </div>
+              <div class="contact-field">
+                <label>Active WhatsApp number*</label>
+                <div class="phone-row">
+                  <input
+                    class="input"
+                    type="tel"
+                    name="whatsapp"
+                    placeholder="WhatsApp number"
+                    autocomplete="tel"
+                    inputmode="tel"
+                  />
+                </div>
+                <div class="error whatsapp-error">
+                  Please enter a valid WhatsApp number in the correct format.
+                </div>
+              </div>
+              <div class="contact-field">
+                <label>Email*</label
+                ><input
+                  class="input"
+                  type="email"
+                  name="email"
+                  placeholder="name@example.com"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+            <div class="error">Please fill all required fields correctly.</div>
+          </div>
+        </section>
+
+        <!-- Thank You — Simple -->
+        <section class="step done" data-type="done" aria-live="polite">
+
+          <div class="thankyou-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+          </div>
+
+          <h2 class="thankyou-heading">Thank You!</h2>
+          <p class="thankyou-message">
+            Thank You! We appreciate your time. Our team will reach out to you
+            soon. Meanwhile, follow us on social media and stay connected!
+          </p>
+
+          <div class="thankyou-links">
+            <!-- Facebook Page Button -->
+            <a
+              class="thankyou-link fb"
+              href="https://www.facebook.com/karwanpropertiesllc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+              Facebook
+            </a>
+
+            <!-- Instagram Button -->
+            <a
+              class="thankyou-link ig"
+              href="https://www.instagram.com/karwanproperties"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              Instagram
+            </a>
+
+            <!-- Website Button -->
+            <a
+              class="thankyou-link web"
+              href="https://www.karwanproperties.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
+                />
+              </svg>
+              Website
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- Bottom nav -->
+      <footer class="nav" id="nav">
+        <button class="back-btn" id="backBtn" type="button" aria-label="Back">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+          >
+            <path d="M15 18L9 12L15 6" />
+          </svg>
+        </button>
+        <button class="ok-btn" id="nextBtn" type="button">OK</button>
+      </footer>
+
+      <!-- Desktop arrows -->
+      <div class="pager">
+        <button class="pbtn" id="upBtn" title="Previous">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+          >
+            <path d="M6 15l6-6 6 6" />
+          </svg>
+        </button>
+        <button class="pbtn" id="downBtn" title="Next / OK">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+          >
+            <path d="M18 9l-6 6-6-6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="phone-meta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/intlTelInput.min.js"></script>
+
+   <script>
+(function(){
+  // ==============================
+  // 1) Google Apps Script Web App URL
+  // ==============================
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKfJL5QcoqQVNo8LMZgMRcppfmXW_eTFNiLPe-e0KBu0pnMPcmhsGrWEXT8O2hLVNirg/exec";
+
+  const questionSteps = document.getElementById('questionSteps');
+  const questions = (function(){
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'questions.json', false);
+      xhr.send(null);
+      return JSON.parse(xhr.responseText || '[]');
+    } catch (e) {
+      return [];
+    }
+  })();
+
+  function renderQuestions(items){
+    if(!questionSteps) return;
+    questionSteps.innerHTML = (items || []).map((item, idx) => {
+      if(item.type === 'choice'){
+        const options = (item.options || []).map((opt, optIdx) =>
+          `<label class="choice" data-custom="${String(opt).toLowerCase() === 'custom time'}">
+            <input type="radio" name="${item.name}" value="${opt}">
+            <span class="key">${String.fromCharCode(65 + optIdx)}</span>
+            <span>${opt}</span>
+          </label>`
+        ).join('');
+
+        const customField = item.allowCustom ? `
+          <div class="custom-input-wrap" style="display:none; margin-top:10px;">
+            <div class="custom-time-row">
+              <input class="input" type="text" inputmode="numeric" autocomplete="off"
+                pattern="[1-9]|1[0-2]" maxlength="2" name="${item.name}CustomHour" placeholder="5">
+              <select class="input" name="${item.name}CustomMeridiem">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+          </div>` : '';
+
+        return `<section class="step ${idx === 0 ? 'active enter-forward' : ''}"
+            data-type="choice" data-name="${item.name}" data-required="${item.required !== false}">
+          <div class="container">
+            <div class="q-badge">${idx + 1}</div>
+            <h2 class="question">${item.question}</h2>
+            <div class="choices">${options}${customField}</div>
+            <div class="error">Please select one option.</div>
+          </div>
+        </section>`;
+      }
+
+      return `<section class="step ${idx === 0 ? 'active enter-forward' : ''}"
+          data-type="text" data-name="${item.name}" data-required="${item.required !== false}">
+        <div class="container">
+          <div class="q-badge">${idx + 1}</div>
+          <h2 class="question">${item.question}</h2>
+          <div class="field-area">
+            <input class="input" type="text" name="${item.name}"
+              placeholder="${item.placeholder || 'Type your answer here...'}" autocomplete="off">
+          </div>
+          <div class="error">Please enter your answer.</div>
+        </div>
+      </section>`;
+    }).join('');
+  }
+
+  renderQuestions(questions);
+
+  const steps = Array.from(document.querySelectorAll('.step'));
+  const realSteps = steps.filter(s => s.dataset.type !== 'done');
+
+  const nextBtn = document.getElementById('nextBtn');
+  const backBtn = document.getElementById('backBtn');
+  const nav = document.getElementById('nav');
+  const upBtn = document.getElementById('upBtn');
+  const downBtn = document.getElementById('downBtn');
+
+  const progressDone = document.getElementById('progressDone');
+  const progressLeft = document.getElementById('progressLeft');
+
+  const phoneInput = document.querySelector('input[name="phone"]');
+  const whatsappInput = document.querySelector('input[name="whatsapp"]');
+  const phoneError = document.querySelector('.phone-error');
+  const whatsappError = document.querySelector('.whatsapp-error');
+
+  let current = 0;
+  let animating = false;
+
+  // ==============================
+  // Phone inputs (intl-tel-input)
+  // ==============================
+  let iti = window.intlTelInput(phoneInput, {
+    separateDialCode: true,
+    preferredCountries: ['ae','in','pk','us','gb','sa','qa'],
+    autoPlaceholder: 'aggressive',
+    nationalMode: true,
+    utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/utils.min.js'
+  });
+
+  let whatsappIti = window.intlTelInput(whatsappInput, {
+    separateDialCode: true,
+    preferredCountries: ['ae','in','pk','us','gb','sa','qa'],
+    autoPlaceholder: 'aggressive',
+    nationalMode: true,
+    utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/utils.min.js'
+  });
+
+  phoneInput.addEventListener('input', onPhoneInput);
+  phoneInput.addEventListener('blur', validatePhoneSoft);
+  whatsappInput.addEventListener('input', onWhatsAppInput);
+  whatsappInput.addEventListener('blur', validateWhatsAppSoft);
+
+  function setPhoneError(bad){
+    if(!phoneError) return;
+    phoneError.style.display = bad ? 'block' : 'none';
+  }
+
+  function setWhatsAppError(bad){
+    if(!whatsappError) return;
+    whatsappError.style.display = bad ? 'block' : 'none';
+  }
+
+  function onPhoneInput(){
+    const raw = String(phoneInput.value || '').replace(/\D/g, '');
+    if(raw){
+      const country = iti.getSelectedCountryData ? iti.getSelectedCountryData() : null;
+      const dialCode = country && country.dialCode ? String(country.dialCode).replace(/\D/g, '') : '';
+      if(dialCode){ try { iti.setNumber('+' + dialCode + raw); } catch(e) {} }
+    } else if(phoneInput.value !== '') {
+      phoneInput.value = '';
+    }
+
+    const bad = phoneInput.value.trim().length > 0 && !iti.isValidNumber();
+    markInput(phoneInput, bad);
+    setPhoneError(bad);
+  }
+
+  function validatePhoneSoft(){
+    const raw = String(phoneInput.value || '').replace(/\D/g, '');
+    if(raw){
+      const country = iti.getSelectedCountryData ? iti.getSelectedCountryData() : null;
+      const dialCode = country && country.dialCode ? String(country.dialCode).replace(/\D/g, '') : '';
+      if(dialCode){ try { iti.setNumber('+' + dialCode + raw); } catch(e) {} }
+    }
+
+    const bad = phoneInput.value.trim().length > 0 && !iti.isValidNumber();
+    markInput(phoneInput, bad);
+    setPhoneError(bad);
+  }
+
+  function onWhatsAppInput(){
+    const raw = String(whatsappInput.value || '').replace(/\D/g, '');
+    if(raw){
+      const country = whatsappIti.getSelectedCountryData ? whatsappIti.getSelectedCountryData() : null;
+      const dialCode = country && country.dialCode ? String(country.dialCode).replace(/\D/g, '') : '';
+      if(dialCode){ try { whatsappIti.setNumber('+' + dialCode + raw); } catch(e) {} }
+    } else if(whatsappInput.value !== '') {
+      whatsappInput.value = '';
+    }
+
+    const bad = whatsappInput.value.trim().length > 0 && !whatsappIti.isValidNumber();
+    markInput(whatsappInput, bad);
+    setWhatsAppError(bad);
+  }
+
+  function validateWhatsAppSoft(){
+    const raw = String(whatsappInput.value || '').replace(/\D/g, '');
+    if(raw){
+      const country = whatsappIti.getSelectedCountryData ? whatsappIti.getSelectedCountryData() : null;
+      const dialCode = country && country.dialCode ? String(country.dialCode).replace(/\D/g, '') : '';
+      if(dialCode){ try { whatsappIti.setNumber('+' + dialCode + raw); } catch(e) {} }
+    }
+
+    const bad = whatsappInput.value.trim().length > 0 && !whatsappIti.isValidNumber();
+    markInput(whatsappInput, bad);
+    setWhatsAppError(bad);
+  }
+
+  // ==============================
+  // Button press effect
+  // ==============================
+  function attachPressFx(btn){
+    if(!btn) return;
+    let pressing = false;
+
+    const start = () => {
+      if(btn.disabled) return;
+      if(pressing) return;
+      pressing = true;
+      btn.classList.add('is-pressing');
+    };
+    const stop = () => {
+      if(!pressing) return;
+      pressing = false;
+      btn.classList.remove('is-pressing');
+      btn.classList.add('did-press');
+      window.setTimeout(() => btn.classList.remove('did-press'), 160);
+    };
+
+    btn.addEventListener('pointerdown', start);
+    btn.addEventListener('pointerup', stop);
+    btn.addEventListener('pointercancel', stop);
+    btn.addEventListener('pointerleave', stop);
+    btn.addEventListener('pointerout', stop);
+    btn.addEventListener('blur', stop);
+    btn.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') start(); });
+    btn.addEventListener('keyup', (e) => { if(e.key === 'Enter' || e.key === ' ') stop(); });
+  }
+
+  [nextBtn, backBtn, upBtn, downBtn].forEach(btn => attachPressFx(btn));
+
+  // ==============================
+  // Custom time helpers
+  // ==============================
+  function formatCustomTime(hour, meridiem){
+    const h = String(hour || '').replace(/\D/g, '').slice(0, 2);
+    const m = String(meridiem || 'AM').toUpperCase();
+    return h && /^(?:[1-9]|1[0-2])$/.test(h) ? `${h} ${m}` : '';
+  }
+
+  function clampCustomHour(input){
+    if(!input) return;
+    input.value = String(input.value || '').replace(/\D/g, '').slice(0, 2);
+  }
+
+  function isValidCustomTime(hour, meridiem){
+    return /^(?:[1-9]|1[0-2])$/.test(String(hour || '').replace(/\D/g, '')) &&
+           /^(AM|PM)$/i.test(String(meridiem || 'AM'));
+  }
+
+  // Choices Logic
+  document.querySelectorAll('.custom-input-wrap input[name$="CustomHour"]').forEach(input => {
+    input.addEventListener('input', () => clampCustomHour(input));
+  });
+
+  document.querySelectorAll('.choices').forEach(group => {
+    const opts = group.querySelectorAll('.choice');
+    opts.forEach((lbl, idx) => {
+      const key = lbl.querySelector('.key');
+      if (key) key.textContent = String.fromCharCode(65 + idx);
+
+      lbl.addEventListener('click', () => {
+        opts.forEach(c => c.classList.remove('selected'));
+        lbl.classList.add('selected');
+
+        const input = lbl.querySelector('input[type=radio]');
+        if(input) input.checked = true;
+
+        const step = lbl.closest('.step');
+        const customWrap = step ? step.querySelector('.custom-input-wrap') : null;
+        const customHour = customWrap ? customWrap.querySelector('input[name$="CustomHour"]') : null;
+        const customMeridiem = customWrap ? customWrap.querySelector('select[name$="CustomMeridiem"]') : null;
+
+        if (customWrap && customHour && customMeridiem) {
+          const isCustom = lbl.dataset.custom === 'true';
+          customWrap.style.display = isCustom ? 'flex' : 'none';
+          if (!isCustom) { customHour.value=''; customMeridiem.value='AM'; }
+        }
+      });
+    });
+  });
+
+  // ==============================
+  // Navigation
+  // ==============================
+  nextBtn.addEventListener('click', goNext);
+  backBtn.addEventListener('click', goBack);
+  if(downBtn) downBtn.addEventListener('click', goNext);
+  if(upBtn) upBtn.addEventListener('click', goBack);
+
+  updateUI();
+
+  function goNext(){
+    if(animating) return;
+    const s = steps[current];
+    if(s.dataset.type === 'done') return;
+
+    if(!validateStep(s)){
+      shake(s);
+      return;
+    }
+
+    if(current === realSteps.length - 1){
+      submitForm();
+      return;
+    }
+
+          // ===== META PIXEL LEAD EVENT =====
+if (typeof fbq !== 'undefined') {
+  fbq('track', 'Lead', {
+    content_name: 'Serenz_IND'
+  });
+}
+// ===== END PIXEL LEAD EVENT =====
+
+    changeStep(current + 1, 'forward');
+  }
+
+  function goBack(){
+    if(animating || current <= 0) return;
+    changeStep(current - 1, 'back');
+  }
+
+  function changeStep(n, dir){
+    if(n < 0 || n >= steps.length) return;
+    animating = true;
+
+    const o = steps[current];
+    const nS = steps[n];
+
+    o.classList.remove(...['active','enter-forward','enter-back','show-error']);
+    nS.classList.remove(...['leave-forward','leave-back','enter-forward','enter-back']);
+
+    if(dir === 'forward'){
+      o.classList.add('leave-forward');
+      nS.classList.add('active','enter-forward');
+    } else {
+      o.classList.add('leave-back');
+      nS.classList.add('active','enter-back');
+    }
+
+    current = n;
+    updateUI();
+
+    setTimeout(() => {
+      o.classList.remove('leave-forward','leave-back');
+      animating = false;
+      focusInput(nS);
+    }, 440);
+  }
+
+  function updateUI(){
+    updateProgress();
+    const hideBack = (current === 0) && (steps[current].dataset.type !== 'done');
+
+    nav.classList.toggle('no-back', hideBack);
+    backBtn.tabIndex = hideBack ? -1 : 0;
+    if(upBtn) upBtn.disabled = hideBack;
+
+    if(steps[current].dataset.type === 'done'){
+      nav.style.display = 'none';
+      if(upBtn && downBtn){ upBtn.style.display='none'; downBtn.style.display='none'; }
+    } else {
+      nav.style.display = 'flex';
+      if(upBtn && downBtn){ upBtn.style.display='grid'; downBtn.style.display='grid'; }
+    }
+
+    nextBtn.textContent = (steps[current].dataset.type === 'contact') ? 'Submit' : 'OK';
+    if(downBtn) downBtn.title = (steps[current].dataset.type === 'contact') ? 'Submit' : 'Next / OK';
+  }
+
+  function updateProgress(){
+    if(steps[current].dataset.type === 'done'){
+      progressDone.style.width = '100%';
+      progressLeft.style.flexBasis = '0%';
+      return;
+    }
+    const p = ((current + 1) / realSteps.length) * 100;
+    const s = Math.max(7, Math.min(p, 100));
+    progressDone.style.width = s + '%';
+    progressLeft.style.flexBasis = (100 - s) + '%';
+    progressLeft.style.opacity = s >= 99 ? '0' : '1';
+  }
+
+  function validateStep(step){
+    if(step.dataset.required !== 'true') return true;
+
+    let ok = true;
+    const t = step.dataset.type;
+
+    if(t === 'choice'){
+      const selected = step.querySelector('input:checked');
+      ok = !!selected;
+
+      const customHour = step.querySelector('.custom-input-wrap input[name$="CustomHour"]');
+      const customMeridiem = step.querySelector('.custom-input-wrap select[name$="CustomMeridiem"]');
+
+      if(selected && String(selected.value).toLowerCase().includes('custom') && customHour && customMeridiem){
+        ok = isValidCustomTime(customHour.value, customMeridiem.value);
+      }
+
+    } else if(t === 'text'){
+      ok = step.querySelector('input').value.trim().length > 0;
+
+    } else if(t === 'contact'){
+      const f = step.querySelector('[name="firstName"]');
+      const l = step.querySelector('[name="lastName"]');
+      const p = step.querySelector('[name="phone"]');
+      const w = step.querySelector('[name="whatsapp"]');
+      const e = step.querySelector('[name="email"]');
+
+      const pOk = iti.isValidNumber();
+      const wOk = whatsappIti.isValidNumber();
+      const eOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim());
+
+      ok = f.value.trim().length > 1 &&
+           l.value.trim().length > 0 &&
+           pOk && wOk && eOk;
+
+      markInput(f, f.value.trim().length <= 1);
+      markInput(l, l.value.trim().length === 0);
+      markInput(p, !pOk);
+      markInput(w, !wOk);
+      markInput(e, !eOk);
+
+      setPhoneError(!pOk);
+      setWhatsAppError(!wOk);
+    }
+
+    step.classList.toggle('show-error', !ok);
+    return ok;
+  }
+
+  function markInput(inp, bad){
+    inp.style.borderBottomColor = bad ? 'var(--error)' : '#454545';
+  }
+
+  // ==============================
+  // Submit to Google Sheets
+  // ==============================
+  async function submitForm(){
+    const payload = getFormData();
+    payload.userAgent = navigator.userAgent;
+
+    nextBtn.textContent = 'Submitting…';
+    nextBtn.disabled = true;
+
+    try {
+      const res = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+
+      const json = await res.json().catch(() => ({}));
+      if(!res.ok || json.ok === false) throw new Error(json.error || "Request failed");
+
+      changeStep(steps.length - 1, 'forward');
+      progressDone.style.width = '100%';
+      fireConfetti();
+
+    } catch (err) {
+      console.error(err);
+      nextBtn.textContent = 'Submit';
+      nextBtn.disabled = false;
+      alert("Submit failed. Please try again.");
+    }
+  }
+
+  function getFormData(){
+    const out = {};
+
+    realSteps.forEach(s => {
+      const t = s.dataset.type;
+      const n = s.dataset.name;
+
+      if(t === 'choice'){
+        const c = s.querySelector(':checked');
+        if(c){
+          const customHour = s.querySelector('.custom-input-wrap input[name$="CustomHour"]');
+          const customMeridiem = s.querySelector('.custom-input-wrap select[name$="CustomMeridiem"]');
+          const rawCustom = customHour && customMeridiem ? formatCustomTime(customHour.value, customMeridiem.value) : '';
+
+          if(customHour && customMeridiem && String(c.value).toLowerCase().includes('custom') && rawCustom){
+            out[n] = rawCustom;
+          } else {
+            out[n] = c.value;
+          }
+        }
+      }
+      else if(t === 'text'){
+        out[n] = s.querySelector('input').value.trim();
+      }
+      else if(t === 'contact'){
+        out.firstName = s.querySelector('[name="firstName"]').value.trim();
+        out.lastName  = s.querySelector('[name="lastName"]').value.trim();
+        out.phone     = iti.getNumber();
+        out.whatsapp  = whatsappIti.getNumber();
+        out.email     = s.querySelector('[name="email"]').value.trim();
+      }
+    });
+
+    return out;
+  }
+
+  function focusInput(s){
+    const i = s.querySelector('input[type="text"], input[type="email"], input[type="tel"]');
+    if(i) i.focus({preventScroll:true});
+  }
+
+  function shake(el){
+    el.animate(
+      [{transform:'translateY(0)'},{transform:'translateY(-8px)'},{transform:'translateY(8px)'},{transform:'translateY(0)'}],
+      {duration:280,easing:'ease-in-out'}
+    );
+  }
+
+  // ==============================
+  // Confetti (FIXED resize scope)
+  // ==============================
+  function fireConfetti(){
+    const cv = document.getElementById('confetti');
+    if(!cv) return;
+    const ctx = cv.getContext('2d');
+    const dpi = window.devicePixelRatio || 1;
+
+    const resize = () => {
+      cv.width = cv.clientWidth * dpi;
+      cv.height = cv.clientHeight * dpi;
+    };
+
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const colors = ['#f0eadf','#e3d6bd','#d3b889','#caa96f','#fff'];
+    const ps = Array.from({length:110}, () => ({
+      x: Math.random() * cv.width,
+      y: -20 - Math.random() * cv.height * .4,
+      r: 3 + 5 * Math.random(),
+      c: colors[(Math.random() * colors.length) | 0],
+      vy: 1 + 3 * Math.random(),
+      vx: -1 + 2 * Math.random(),
+      a: Math.PI * Math.random(),
+      va: -0.1 + 0.2 * Math.random()
+    }));
+
+    const st = performance.now();
+    const dur = 1700;
+
+    (function lp(t){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      ps.forEach(p => {
+        p.a += p.va;
+        p.x += p.vx;
+        p.y += p.vy;
+
+        ctx.save();
+        ctx.translate(p.x,p.y);
+        ctx.rotate(p.a);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.r,-p.r,p.r*2,p.r*2*0.7);
+        ctx.restore();
+      });
+
+      if(t - st < dur) requestAnimationFrame(lp);
+      else ctx.clearRect(0,0,cv.width,cv.height);
+    })(st);
+
+    setTimeout(() => window.removeEventListener('resize', resize), dur + 200);
+  }
+
+})();
+</script>
+  </body>
+</html>

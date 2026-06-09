@@ -1,0 +1,136 @@
+// phone-meta.js
+(function(global){
+  const C = [
+    // GCC / Middle East
+    {name:"United Arab Emirates", iso2:"AE", dialCode:"+971", trunk:"0", masks:["0## ### ####"], mobilePrefixes:["50","52","54","55","56","58"], example:"050 123 4567"},
+    {name:"Saudi Arabia", iso2:"SA", dialCode:"+966", trunk:"0", masks:["05# ### ####"], mobilePrefixes:["50","53","54","55","56","57","58","59"], example:"055 123 4567"},
+    {name:"Qatar", iso2:"QA", dialCode:"+974", masks:["#### ####"], example:"3312 3456"},
+    {name:"Kuwait", iso2:"KW", dialCode:"+965", masks:["#### ####"], example:"5001 2345"},
+    {name:"Bahrain", iso2:"BH", dialCode:"+973", masks:["#### ####"], example:"3600 1234"},
+    {name:"Oman", iso2:"OM", dialCode:"+968", masks:["#### ####"], example:"9212 3456"},
+    {name:"Jordan", iso2:"JO", dialCode:"+962", trunk:"0", masks:["07# ### ####"], example:"079 123 4567"},
+    {name:"Egypt", iso2:"EG", dialCode:"+20", trunk:"0", masks:["01# #### ####"], example:"011 1234 5678"},
+    {name:"Iraq", iso2:"IQ", dialCode:"+964", trunk:"0", masks:["07# ### ####"], example:"079 123 4567"},
+    {name:"Iran", iso2:"IR", dialCode:"+98", trunk:"0", masks:["09## ### ####"], example:"0912 345 6789"},
+    {name:"Israel", iso2:"IL", dialCode:"+972", trunk:"0", masks:["05#-###-####"], example:"052-345-6789"},
+    {name:"Turkey", iso2:"TR", dialCode:"+90", trunk:"0", masks:["05## ### ####"], example:"0555 123 4567"},
+    {name:"Lebanon", iso2:"LB", dialCode:"+961", trunk:"0", masks:["03# ### ###","0# ### ###"], example:"03 123 456"},
+    {name:"Syria", iso2:"SY", dialCode:"+963", trunk:"0", masks:["09## ### ###"], example:"0944 123 456"},
+    {name:"Yemen", iso2:"YE", dialCode:"+967", masks:["7## ### ###"], example:"733 123 456"},
+
+    // South Asia
+    {name:"India", iso2:"IN", dialCode:"+91", masks:["##### #####"], example:"91234 56789"},
+    {name:"Pakistan", iso2:"PK", dialCode:"+92", trunk:"0", masks:["03## ### ####"], example:"0301 234 5678"},
+    {name:"Bangladesh", iso2:"BD", dialCode:"+880", trunk:"0", masks:["01### ######"], example:"01712 345678"},
+    {name:"Sri Lanka", iso2:"LK", dialCode:"+94", trunk:"0", masks:["07# ### ####"], example:"077 123 4567"},
+    {name:"Nepal", iso2:"NP", dialCode:"+977", masks:["9# ### ####"], example:"98 123 4567"},
+    {name:"Afghanistan", iso2:"AF", dialCode:"+93", trunk:"0", masks:["07# ### ####"], example:"079 123 4567"},
+
+    // East Asia
+    {name:"China", iso2:"CN", dialCode:"+86", masks:["1## #### ####"], example:"138 1234 5678"},
+    {name:"Hong Kong", iso2:"HK", dialCode:"+852", masks:["#### ####"], example:"9123 4567"},
+    {name:"Macau", iso2:"MO", dialCode:"+853", masks:["#### ####"], example:"6612 3456"},
+    {name:"Taiwan", iso2:"TW", dialCode:"+886", trunk:"0", masks:["09## ### ###"], example:"0912 345 678"},
+    {name:"Japan", iso2:"JP", dialCode:"+81", trunk:"0", masks:["0#0 #### ####"], example:"090 1234 5678"},
+    {name:"South Korea", iso2:"KR", dialCode:"+82", trunk:"0", masks:["010 #### ####"], example:"010 1234 5678"},
+
+    // Southeast Asia
+    {name:"Singapore", iso2:"SG", dialCode:"+65", masks:["#### ####"], example:"8123 4567"},
+    {name:"Malaysia", iso2:"MY", dialCode:"+60", trunk:"0", masks:["01# ### ####"], example:"012 345 6789"},
+    {name:"Thailand", iso2:"TH", dialCode:"+66", trunk:"0", masks:["0# #### ####"], example:"08 1234 5678"},
+    {name:"Vietnam", iso2:"VN", dialCode:"+84", trunk:"0", masks:["0## #### ###"], example:"091 2345 678"},
+    {name:"Philippines", iso2:"PH", dialCode:"+63", trunk:"0", masks:["09## ### ####"], example:"0917 123 4567"},
+    {name:"Indonesia", iso2:"ID", dialCode:"+62", trunk:"0", masks:["08## #### ####"], example:"0812 3456 7890"},
+    {name:"Brunei", iso2:"BN", dialCode:"+673", masks:["### ####"], example:"712 3456"},
+    {name:"Cambodia", iso2:"KH", dialCode:"+855", trunk:"0", masks:["0## ### ###"], example:"092 123 456"},
+    {name:"Laos", iso2:"LA", dialCode:"+856", trunk:"0", masks:["020 ### ####"], example:"020 123 4567"},
+    {name:"Myanmar", iso2:"MM", dialCode:"+95", trunk:"0", masks:["09 ### ####"], example:"09 123 4567"},
+
+    // Oceania
+    {name:"Australia", iso2:"AU", dialCode:"+61", trunk:"0", masks:["04## ### ###"], example:"0412 345 678"},
+    {name:"New Zealand", iso2:"NZ", dialCode:"+64", trunk:"0", masks:["02# ### ####"], example:"021 234 5678"},
+    {name:"Fiji", iso2:"FJ", dialCode:"+679", masks:["### ####"], example:"701 2345"},
+    {name:"Papua New Guinea", iso2:"PG", dialCode:"+675", masks:["7## ## ###"], example:"721 23 456"},
+
+    // North America
+    {name:"United States", iso2:"US", dialCode:"+1", masks:["(###) ###-####"], example:"(201) 555-0123"},
+    {name:"Canada", iso2:"CA", dialCode:"+1", masks:["(###) ###-####"], example:"(416) 555-0123"},
+    {name:"Mexico", iso2:"MX", dialCode:"+52", masks:["(##) ####-####"], example:"(55) 1234-5678"},
+    {name:"Jamaica", iso2:"JM", dialCode:"+1", masks:["(###) ###-####"], example:"(876) 555-0123"},
+    {name:"Puerto Rico", iso2:"PR", dialCode:"+1", masks:["(###) ###-####"], example:"(787) 555-0123"},
+    {name:"Dominican Republic", iso2:"DO", dialCode:"+1", masks:["(###) ###-####"], example:"(809) 555-0123"},
+    {name:"Trinidad and Tobago", iso2:"TT", dialCode:"+1", masks:["(###) ###-####"], example:"(868) 555-0123"},
+
+    // South America
+    {name:"Brazil", iso2:"BR", dialCode:"+55", masks:["(##) 9####-####"], example:"(11) 91234-5678"},
+    {name:"Argentina", iso2:"AR", dialCode:"+54", masks:["(##) ####-####","(###) ###-####"], example:"(11) 4321-1234"},
+    {name:"Chile", iso2:"CL", dialCode:"+56", masks:["9 #### ####"], example:"9 1234 5678"},
+    {name:"Colombia", iso2:"CO", dialCode:"+57", masks:["3## ### ####"], example:"300 123 4567"},
+    {name:"Peru", iso2:"PE", dialCode:"+51", masks:["9## ### ###"], example:"912 345 678"},
+    {name:"Ecuador", iso2:"EC", dialCode:"+593", masks:["9# ### ####"], example:"99 123 4567"},
+    {name:"Venezuela", iso2:"VE", dialCode:"+58", trunk:"0", masks:["04## #######"], example:"0412 1234567"},
+    {name:"Uruguay", iso2:"UY", dialCode:"+598", masks:["09# ### ###"], example:"098 123 456"},
+    {name:"Paraguay", iso2:"PY", dialCode:"+595", masks:["09## ### ###"], example:"0981 234 567"},
+    {name:"Bolivia", iso2:"BO", dialCode:"+591", masks:["7## ### ##"], example:"712 345 67"},
+
+    // Europe (West/North/South)
+    {name:"United Kingdom", iso2:"GB", dialCode:"+44", trunk:"0", masks:["07### ######","0## #### ####","0### ### ####"], example:"07123 456789"},
+    {name:"Ireland", iso2:"IE", dialCode:"+353", trunk:"0", masks:["08# ### ####"], example:"087 123 4567"},
+    {name:"France", iso2:"FR", dialCode:"+33", trunk:"0", masks:["0# ## ## ## ##"], example:"06 12 34 56 78"},
+    {name:"Germany", iso2:"DE", dialCode:"+49", trunk:"0", masks:["0#### ######","0### ### ####"], example:"01512 345678"},
+    {name:"Spain", iso2:"ES", dialCode:"+34", masks:["6## ### ###","7## ### ###"], example:"612 345 678"},
+    {name:"Portugal", iso2:"PT", dialCode:"+351", masks:["9## ### ###"], example:"912 345 678"},
+    {name:"Italy", iso2:"IT", dialCode:"+39", masks:["3## ### ####"], example:"345 123 4567"},
+    {name:"Netherlands", iso2:"NL", dialCode:"+31", trunk:"0", masks:["06 ########","0## ### ####"], example:"06 12345678"},
+    {name:"Belgium", iso2:"BE", dialCode:"+32", trunk:"0", masks:["04## ## ## ##"], example:"0471 12 34 56"},
+    {name:"Luxembourg", iso2:"LU", dialCode:"+352", masks:["6## ### ###"], example:"621 234 567"},
+    {name:"Switzerland", iso2:"CH", dialCode:"+41", trunk:"0", masks:["07# ### ## ##"], example:"079 123 45 67"},
+    {name:"Austria", iso2:"AT", dialCode:"+43", trunk:"0", masks:["06## ### ####"], example:"0664 123 4567"},
+    {name:"Denmark", iso2:"DK", dialCode:"+45", masks:["## ## ## ##"], example:"20 12 34 56"},
+    {name:"Sweden", iso2:"SE", dialCode:"+46", trunk:"0", masks:["07#-### ## ##"], example:"070-123 45 67"},
+    {name:"Norway", iso2:"NO", dialCode:"+47", masks:["### ## ###"], example:"412 34 567"},
+    {name:"Finland", iso2:"FI", dialCode:"+358", trunk:"0", masks:["04# ### ####"], example:"040 123 4567"},
+    {name:"Iceland", iso2:"IS", dialCode:"+354", masks:["### ####"], example:"691 2345"},
+    {name:"Greece", iso2:"GR", dialCode:"+30", masks:["69# ### ####"], example:"691 234 5678"},
+    {name:"Cyprus", iso2:"CY", dialCode:"+357", masks:["9# ######"], example:"99 123456"},
+    {name:"Malta", iso2:"MT", dialCode:"+356", masks:["9# ## ####"], example:"99 12 3456"},
+
+    // Europe (Central/East)
+    {name:"Czechia", iso2:"CZ", dialCode:"+420", masks:["### ### ###"], example:"601 123 456"},
+    {name:"Slovakia", iso2:"SK", dialCode:"+421", trunk:"0", masks:["09# ### ####"], example:"091 234 5678"},
+    {name:"Poland", iso2:"PL", dialCode:"+48", masks:["### ### ###"], example:"501 234 567"},
+    {name:"Hungary", iso2:"HU", dialCode:"+36", trunk:"06", masks:["06 ## ### ####"], example:"06 20 123 4567"},
+    {name:"Romania", iso2:"RO", dialCode:"+40", trunk:"0", masks:["07## ### ###"], example:"0723 123 456"},
+    {name:"Bulgaria", iso2:"BG", dialCode:"+359", trunk:"0", masks:["08# ### ####"], example:"088 123 4567"},
+    {name:"Croatia", iso2:"HR", dialCode:"+385", trunk:"0", masks:["09# ### ####"], example:"091 234 5678"},
+    {name:"Slovenia", iso2:"SI", dialCode:"+386", trunk:"0", masks:["0## ### ###"], example:"041 234 567"},
+    {name:"Estonia", iso2:"EE", dialCode:"+372", masks:["5## ####"], example:"512 3456"},
+    {name:"Latvia", iso2:"LV", dialCode:"+371", masks:["2## ######"], example:"212 34567"},
+    {name:"Lithuania", iso2:"LT", dialCode:"+370", trunk:"0", masks:["6## #####"], example:"612 34567"},
+    {name:"Ukraine", iso2:"UA", dialCode:"+380", trunk:"0", masks:["0## ### ####"], example:"050 123 4567"},
+    {name:"Belarus", iso2:"BY", dialCode:"+375", trunk:"8", masks:["8### ### ## ##"], example:"8029 123 45 67"},
+    {name:"Russia", iso2:"RU", dialCode:"+7", trunk:"8", masks:["8 9## ### ## ##"], example:"8 912 345 67 89"},
+    {name:"Kazakhstan", iso2:"KZ", dialCode:"+7", trunk:"8", masks:["8 7## ### ## ##"], example:"8 701 234 56 78"},
+    {name:"Georgia", iso2:"GE", dialCode:"+995", masks:["5## ## ## ##"], example:"599 12 34 56"},
+    {name:"Armenia", iso2:"AM", dialCode:"+374", masks:["## ## ####"], example:"77 12 3456"},
+    {name:"Azerbaijan", iso2:"AZ", dialCode:"+994", masks:["(##) ### ## ##"], example:"(50) 123 45 67"},
+
+    // Africa
+    {name:"Morocco", iso2:"MA", dialCode:"+212", trunk:"0", masks:["0##-####-###"], example:"061-2345-678"},
+    {name:"Algeria", iso2:"DZ", dialCode:"+213", trunk:"0", masks:["0## ## ## ##"], example:"055 12 34 56"},
+    {name:"Tunisia", iso2:"TN", dialCode:"+216", masks:["## ### ###"], example:"20 123 456"},
+    {name:"Senegal", iso2:"SN", dialCode:"+221", masks:["7# ### ## ##"], example:"77 123 45 67"},
+    {name:"Ivory Coast", iso2:"CI", dialCode:"+225", masks:["## ## ## ## ##"], example:"01 23 45 67 89"},
+    {name:"Cameroon", iso2:"CM", dialCode:"+237", masks:["6## ## ## ##"], example:"690 12 34 56"},
+    {name:"Ghana", iso2:"GH", dialCode:"+233", trunk:"0", masks:["0## ### ####"], example:"024 123 4567"},
+    {name:"Nigeria", iso2:"NG", dialCode:"+234", trunk:"0", masks:["0## ### ####"], example:"080 123 4567"},
+    {name:"Ethiopia", iso2:"ET", dialCode:"+251", trunk:"0", masks:["09## ### ###"], example:"0912 345 678"},
+    {name:"Kenya", iso2:"KE", dialCode:"+254", trunk:"0", masks:["07## ### ###"], example:"0712 345 678"},
+    {name:"Tanzania", iso2:"TZ", dialCode:"+255", trunk:"0", masks:["0### ### ###"], example:"0712 345 678"},
+    {name:"Uganda", iso2:"UG", dialCode:"+256", trunk:"0", masks:["07# ### ####"], example:"070 123 4567"},
+    {name:"South Africa", iso2:"ZA", dialCode:"+27", trunk:"0", masks:["0## ### ####"], example:"082 123 4567"},
+    {name:"Zimbabwe", iso2:"ZW", dialCode:"+263", trunk:"0", masks:["07## ### ###"], example:"0772 123 456"},
+    {name:"Zambia", iso2:"ZM", dialCode:"+260", trunk:"0", masks:["09## ### ###"], example:"0977 123 456"}
+  ];
+  global.PHONE_META = { countries: C };
+})(window);

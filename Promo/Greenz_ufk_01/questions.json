@@ -1,0 +1,60 @@
+[
+  {
+    "type": "choice",
+    "name": "language",
+    "required": true,
+    "question": "What is your preferred language? *",
+    "options": ["English", "Hindi", "Arabic"]
+  },
+
+  {
+    "type": "choice",
+    "name": "budget",
+    "required": true,
+    "question": "What is your investment budget? *",
+    "options": ["AED 3.5M - AED 4M", "AED 4M - AED 4.5M", "AED 4.5M - AED 5M", "AED 5M+"]
+  },
+  {
+    "type": "choice",
+    "name": "investWhen",
+    "required": true,
+    "question": "When are you planning to invest? *",
+    "options": [" Immediately", "Within 30 Days", "Within 3 Months", "Just Exploring"]
+  },
+  {
+    "type": "choice",
+    "name": "unitType",
+    "required": true,
+    "question": "What kind of unit are you interested in? *",
+    "options": [" 3-Bedroom Townhouse", "4-Bedroom Townhouse", "5-Bedroom Villa"]
+  },
+  {
+    "type": "choice",
+    "name": "purpose",
+    "required": true,
+    "question": "What is your purpose? *",
+    "options": [" Investment", "End Use", "Both"]
+  },
+  {
+    "type": "text",
+    "name": "city",
+    "required": true,
+    "question": "Which city do you currently live in? *",
+    "placeholder": "Type your answer here..."
+  },
+  {
+    "type": "choice",
+    "name": "callTime",
+    "required": true,
+    "question": "What is the best time to call you? *",
+    "allowCustom": true,
+    "customPlaceholder": "e.g. 5 PM",
+    "options": [
+      "9 AM - 12 PM",
+      "12 PM - 4 PM",
+      "4 PM - 7 PM",
+      "Call me anytime",
+      "Custom time"
+    ]
+  }
+]
