@@ -1253,13 +1253,7 @@ fbq('track', 'PageView');
       return;
     }
 
-        // ===== META PIXEL LEAD EVENT =====
-if (typeof fbq !== 'undefined') {
-  fbq('track', 'Lead', {
-    content_name: 'Greenz_UK'
-  });
-}
-// ===== END PIXEL LEAD EVENT =====
+  
 
     changeStep(current + 1, 'forward');
   }
@@ -1403,9 +1397,16 @@ if (typeof fbq !== 'undefined') {
       const json = await res.json().catch(() => ({}));
       if(!res.ok || json.ok === false) throw new Error(json.error || "Request failed");
 
+      // =========== 
       changeStep(steps.length - 1, 'forward');
       progressDone.style.width = '100%';
       fireConfetti();
+
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', { content_name: 'GreenzUK' });
+      }
+
+      // ================ 
 
     } catch (err) {
       console.error(err);
