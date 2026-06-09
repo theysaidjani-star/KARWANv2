@@ -1402,12 +1402,7 @@ async function submitForm(){
       const json = await res.json().catch(() => ({}));
       if(!res.ok || json.ok === false) throw new Error(json.error || "Request failed");
 
-      // ✅ SIRF YAHAN fire hoga — sheet mein data save hone ke baad
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-          content_name: 'GreenzGCC'  // ← har form mein yeh badlo
-        });
-      }
+      // ===================
 
       changeStep(steps.length - 1, 'forward');
       progressDone.style.width = '100%';
