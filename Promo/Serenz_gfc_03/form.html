@@ -1258,13 +1258,7 @@ src="https://www.facebook.com/tr?id=1747598173040963&ev=PageView&noscript=1"
       return;
     }
 
-    // ===== META PIXEL LEAD EVENT =====
-if (typeof fbq !== 'undefined') {
-  fbq('track', 'Lead', {
-    content_name: 'Serenz_GCC'
-  });
-}
-// ===== END PIXEL LEAD EVENT =====
+
     changeStep(current + 1, 'forward');
   }
 
@@ -1410,6 +1404,10 @@ if (typeof fbq !== 'undefined') {
       changeStep(steps.length - 1, 'forward');
       progressDone.style.width = '100%';
       fireConfetti();
+
+         if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', { content_name: 'SerenzGCC' });
+      }
 
     } catch (err) {
       console.error(err);
