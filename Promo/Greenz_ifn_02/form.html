@@ -25,7 +25,7 @@
       href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.min.css"
     />
 
-<!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -35,7 +35,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1297980835652301');
+fbq('init', '1747598173040963');
 fbq('track', 'PageView');
 </script>
 
@@ -1254,7 +1254,6 @@ fbq('track', 'PageView');
     }
 
 
-
     changeStep(current + 1, 'forward');
   }
 
@@ -1400,6 +1399,10 @@ fbq('track', 'PageView');
       changeStep(steps.length - 1, 'forward');
       progressDone.style.width = '100%';
       fireConfetti();
+
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', { content_name: 'GreenzIND' });
+      }
 
     } catch (err) {
       console.error(err);
